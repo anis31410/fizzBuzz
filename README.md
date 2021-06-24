@@ -3,7 +3,7 @@
 ## Lancer le projet 
 
 ### Etape 1 
-Fork le projet 
+Forker le projet 
 
 ### Etape 2 
 Se placer à la racine du dossier back-nodeJS et lancer la commande 'npm install'
