@@ -1,0 +1,12 @@
+
+<h1>{{name}}</h1>
+<div class="container">
+  <br/>
+<input type="number" [ngModel]="number" (ngModelChange)="onChange($event)" numbersOnly/>
+<br/>
+</div>
+<div class="item" *ngIf="show === true">
+    <span class="number">{{returnValueNumber}}</span>
+</div>
+
+
