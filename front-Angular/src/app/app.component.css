@@ -1,3 +1,48 @@
 .returnString {
     margin-block-start: 0em !important;
+    text-align: -webkit-center !important;
+}
+
+.title {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    text-align: center;
+    text-decoration: underline overline #e94d10;
+}
+
+.inputNumber {
+    
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    text-align: -webkit-center !important;
+}
+
+.valueNumber {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    text-align: -webkit-center !important;
+}
+
+.item {
+    text-align: -webkit-center !important;
+}
+
+.contiguousNumbersTitle {
+    font-size: larger;
+    margin-block-start: 0em !important;
+}
+
+.numberValue {
+    font-size: larger;
+}
+
+.contiguousNumberDetails {
+    font-style: italic;
 }

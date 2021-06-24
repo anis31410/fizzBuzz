@@ -1,16 +1,23 @@
 
-<h1>{{name}}</h1>
+<h1 class="title">{{title}}</h1>
 <div class="container">
   <br/>
-<input type="number" [ngModel]="defaultNumber" (ngModelChange)="onChange($event)" numbersOnly/>
+  <p class="returnString numberValue">Sélectionner :</p>
+<input type="number" [ngModel]="defaultNumber" (ngModelChange)="onChange($event)" class="inputNumber" numbersOnly/>
 </div>
-<p class="returnString">retourne la chaîne de caractère suivante :</p>
-<div class="item">
-    <span class="number">{{returnValueNumber}}</span>
+<hr style="height: 1px; color: #e94d10; background-color: #e94d10; width: 98%;"> 
+<p class="returnString numberValue">Valeur retournée selon la logique FizzBuzz :</p>
+<div class="valueNumber">
+    <span class="numberValue">{{returnValueForNumber}}</span>
 </div>
 <br/>
-<div class="item" *ngIf="showContigusNumbersFizzBuzz === true">
-  <span class="number">{{contigusNumbersValue}}</span>
+<hr style="height: 1px; color: #e94d10; background-color: #e94d10; width: 98%;"> 
+<div class="item">
+  <p class="contiguousNumbersTitle">Le nombre sélectionné et le nombre précédent ou suivant mènent à une séquence fizz puis buzz ou buzz puis fizz ? </p>
+  <p class="contiguousNumbersTitle">{{ showContiguousNumbers ? 'vrai': 'faux'}}  </p>
+</div>
+<div class="item" *ngIf="showContiguousNumbers === true">
+  <span class="contiguousNumberDetails"> détails : {{contiguousNumbersValue}}</span>
 </div>
 
 
