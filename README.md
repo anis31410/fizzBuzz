@@ -14,4 +14,5 @@ Se placer à la racine du dossier back-nodeJS et lancer la commande 'node server
 ### Etape 4
 Se placer à la racine du dossier front-Angular et lancer la commande 'ng serve --proxy-config proxy.conf.json' (lancer la commande 'npm install <module>' si jamais un module n'est pas reconnu puis relancer la commande 'ng serve --proxy-config proxy.conf.json')
 
-### ouvrir un navigateur et se rendre à l'adresse 'localhost:4200'
+### Etape 5
+Ouvrir un navigateur et se rendre à l'adresse 'localhost:4200'
