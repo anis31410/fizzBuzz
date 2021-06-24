@@ -2,11 +2,15 @@
 <h1>{{name}}</h1>
 <div class="container">
   <br/>
-<input type="number" [ngModel]="number" (ngModelChange)="onChange($event)" numbersOnly/>
-<br/>
+<input type="number" [ngModel]="defaultNumber" (ngModelChange)="onChange($event)" numbersOnly/>
 </div>
-<div class="item" *ngIf="show === true">
+<p class="returnString">retourne la chaîne de caractère suivante :</p>
+<div class="item">
     <span class="number">{{returnValueNumber}}</span>
+</div>
+<br/>
+<div class="item" *ngIf="showContigusNumbersFizzBuzz === true">
+  <span class="number">{{contigusNumbersValue}}</span>
 </div>
 
 

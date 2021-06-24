@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
 
 //The addUser endpoint
 router.post('/addNumber/:number', (req, res) =>{
-    console.log('number Value', req.params.number);
 
     // modifie le fichier numbers.json
      fs.readFile("./numbers.json" , 'utf8', function (err, data) {
@@ -52,8 +51,6 @@ router.get('/getNumbers', function(req, res){
                 error: 'les données retournées sont nulles ou indéfinies'
             })
         }
-    
-        console.log('dataNumbers', data);
         
         res.end(data); // you can also use res.send()
     });

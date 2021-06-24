@@ -10,7 +10,10 @@ export class AppComponent {
   name = 'Fizzbuzz Game';
   number = '';
   show = false;
-  returnValueNumber: String = '';
+  showContigusNumbersFizzBuzz = false;
+  returnValueNumber: String = '0';
+  contigusNumbersValue: String = '';
+  defaultNumber: Number = 0;
 
   constructor(private service : AppServiceService) {
 
@@ -44,20 +47,55 @@ export class AppComponent {
 
   fizzbuzzFunction(number: any) {
     this.show = true;
-    number % 15 === 0
+    if(number === 0) {
+      this.returnValueNumber = '';
+    } else {
+      number % 15 === 0
       ? (this.returnValueNumber = 'Fizzbuzz')
       : number % 5 === 0
       ? (this.returnValueNumber = 'Buzz')
       : number % 3 === 0
       ? (this.returnValueNumber = 'Fizz')
-      : (this.returnValueNumber = number);
+      : (this.returnValueNumber = number)
+    }
+    this.contigusNumbers(this.returnValueNumber, number);
   }
 
-  /** contigusNumbers(returnValueNumber: String, number: any) {
-    if(returnValueNumber === "Buzz") {
-      if((number+1) % 3 === 0) {
-        this.contigusNumbersVAlue = `Contigus Numbers `
+  contigusNumbers(returnValueNumber: String, number: any) {
+    if(returnValueNumber === "Buzz" || returnValueNumber === "Fizz") {
+      if(returnValueNumber === "Buzz") {
+        this.buzzThenFizz(number);
       }
+      if(returnValueNumber === "Fizz") {
+        this.fizzThenBuzz(number);
+      }
+    } else {
+      this.contigusNumbersValue = '';
+      this.showContigusNumbersFizzBuzz = false;
     }
-  } */
+   
+  } 
+
+  fizzThenBuzz(number: any) {
+    if((number+1) % 5 === 0) {
+      this.showContigusNumbersFizzBuzz = true;
+      this.contigusNumbersValue = `le nombre suivant retourne la chaîne de caractère Buzz. Les nombres contigus ${number}/${number+1} donnent la séquence Fizz puis Buzz`
+    }
+    if((number-1) % 5 === 0) {
+      this.showContigusNumbersFizzBuzz = true;
+      this.contigusNumbersValue = `le nombre pr\éc\édent retourne la chaîne de caractère Buzz. Les nombres contigus ${number-1}/${number} donnent la séquence Buzz puis Fizz`
+    }
+  }
+
+  buzzThenFizz(number: any) {
+    if((number+1) % 3 === 0) {
+      this.showContigusNumbersFizzBuzz = true;
+      this.contigusNumbersValue = `le nombre suivant retourne la chaîne de caractère Fizz. Les nombres contigus ${number}/${number+1} donnent la séquence Buzz puis Fizz`
+    }
+    if((number-1) % 3 === 0) {
+      this.showContigusNumbersFizzBuzz = true;
+      this.contigusNumbersValue = `le nombre pr\éc\édent retourne la chaîne de caractère Fizz. Les nombres contigus ${number-1}/${number} donnent la séquence Fizz puis Buzz`
+    }
+  }
+
 }
