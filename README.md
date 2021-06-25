@@ -6,7 +6,7 @@
 Forker le projet 
 
 ### Etape 2 
-Se placer à la racine du dossier back-nodeJS et lancer la commande 'npm install'
+Se placer à la racine du dossier back-nodeJS et lancer la commande 'npm install' puis la commande 'npm install express'
 
 ### Etape 3 
 Se placer à la racine du dossier front-Angular et lancer la commande 'npm install'
