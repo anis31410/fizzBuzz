@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppServiceService } from './app-service.service';
+import {FizzBuzzValues} from './enums/fizzBuzzValues';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent {
   returnValueForNumber: String = '0';
   contiguousNumbersValue: String = '';
   defaultNumber: Number = 0;
+  
 
   constructor(private service : AppServiceService) {
 
@@ -56,11 +58,11 @@ export class AppComponent {
       this.returnValueForNumber = '0';
     } else {
       number % 15 === 0
-      ? (this.returnValueForNumber = 'Fizzbuzz')
+      ? (this.returnValueForNumber = FizzBuzzValues.fizzBuzz)
       : number % 5 === 0
-      ? (this.returnValueForNumber = 'Buzz')
+      ? (this.returnValueForNumber = FizzBuzzValues.buzz)
       : number % 3 === 0
-      ? (this.returnValueForNumber = 'Fizz')
+      ? (this.returnValueForNumber = FizzBuzzValues.fizz)
       : (this.returnValueForNumber = number)
     }
     this.contiguousNumbers(this.returnValueForNumber, number);
@@ -69,11 +71,11 @@ export class AppComponent {
 
   // fonction déterminant si le nombre suivant ou précédent permet d'effectuer une séquence fizz puis buzz ou buzz puis fizz avec ce nombre 
   contiguousNumbers(returnValueNumber: String, number: any) {
-    if(returnValueNumber === "Buzz" || returnValueNumber === "Fizz") {
-      if(returnValueNumber === "Buzz") {
+    if(returnValueNumber === FizzBuzzValues.buzz || returnValueNumber === FizzBuzzValues.fizz) {
+      if(returnValueNumber === FizzBuzzValues.buzz) {
         this.buzzThenFizz(number);
       }
-      if(returnValueNumber === "Fizz") {
+      if(returnValueNumber === FizzBuzzValues.fizz) {
         this.fizzThenBuzz(number);
       }
     } else {
